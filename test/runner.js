@@ -1,6 +1,6 @@
 // `tests` is a singleton variable that will contain all our tests
-const tests = []
-
+const tests = [];
+const path = require('path');
 
 // The test function accepts a name and a function
 function test(name, fn) {
@@ -34,13 +34,13 @@ function run() {
 const files = process.argv.slice(2)
 
 // expose the test function as a global variable
-global.test = test
+global.test = test;
 
 // Load each file using `require`
 files.forEach(file => {
 	// Once a file is loaded, it's tests are
-	// added to the `tests` singleton variable
-	require(file)
+    // added to the `tests` singleton variable
+	require(path.join(__dirname, file))
 })
 
 // Now that all the tests from all the files are
