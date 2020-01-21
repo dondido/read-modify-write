@@ -12,12 +12,12 @@ const walkSync = (ref, filter) => {
     return [];
 };
 const copy = function(ref) {
-    const { src, dest, modify } = this;
+    const { src, move, modify } = this;
     const read = () => fs.readFileSync(ref, 'utf8');
-    if(!dest) {
+    if(!move) {
         return { content: modify ? modify(read()) : read() };
     }
-    const target = ref.replace(src, dest);
+    const target = move(ref);
     fs.mkdirSync(path.dirname(target), { recursive: true });
     if (modify) {
         const content = modify(read());
@@ -28,9 +28,9 @@ const copy = function(ref) {
     return { target };
 };
 
-module.exports = (src, dir, dest, filter, modify) => {
-    const keys = walkSync(path.join(__dirname, src, dir), filter);
-    const values = keys.map(copy, { modify, src, dest });
+module.exports = (src, move, filter, modify) => {
+    const keys = walkSync(path.join(__dirname, src), filter);
+    const values = keys.map(copy, { modify, src, move });
     const assign = (key, idx) => [key, values[idx]];
     return Object.fromEntries(keys.map(assign));
 };
