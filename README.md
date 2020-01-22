@@ -1,4 +1,6 @@
-# copy [![NPM version](https://img.shields.io/npm/v/copy.svg?style=flat)](https://www.npmjs.com/package/copy) [![NPM monthly downloads](https://img.shields.io/npm/dm/copy.svg?style=flat)](https://npmjs.org/package/copy)  [![NPM total downloads](https://img.shields.io/npm/dt/copy.svg?style=flat)](https://npmjs.org/package/copy)
+![](https://img.shields.io/badge/node-%3E%3D10.0.0-blue)
+![](https://img.shields.io/badge/dependecies-0-green)
+![](https://img.shields.io/badge/build-pass-green)
 
 # read-modify-write
 NodeJS - Read File, Modify Content, Write to File
@@ -100,8 +102,8 @@ rmw('src/dummy', move, filterCss, clean);
 
 ### 7. Running tests
 
-Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:
+Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can run the tests the following command:
 
 ```sh
-$ npm install && npm test
+$ npm test
 ```
