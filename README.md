@@ -5,6 +5,8 @@
 # read-modify-write
 NodeJS - Read File, Modify Content, Write to File
 
+![Copy Files](folders.png)
+
 ## Table of content
 
 1. Introduction to read-modify-write
