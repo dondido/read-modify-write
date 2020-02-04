@@ -8,7 +8,10 @@ const code = 'const a = [];';
 const html = '<html lang="en"><head><meta charset="utf-8"><script src="script.js"></script></head></html>';
 const clearFiles = () => {
     const removeFile = filePath => fs.unlinkSync(path.join(__dirname, '../', 'dist/dummy', filePath));
-    fs.readdirSync(path.join(__dirname, '../', 'dist/dummy')).forEach(removeFile);
+    const folder = path.join(__dirname, '../', 'dist/dummy');
+    if (fs.existsSync(folder)) {
+        fs.readdirSync(folder).forEach(removeFile);
+    }
 };
 
 test('Should properly read files', () => {

@@ -29,7 +29,7 @@ const copy = function(ref) {
 };
 
 module.exports = (src, move, filter, modify) => {
-    const keys = walkSync(path.join(__dirname, src), filter);
+    const keys = walkSync(path.join(__dirname.split('node_modules')[0], src), filter);
     const values = keys.map(copy, { modify, src, move });
     const assign = (key, idx) => [key, values[idx]];
     return Object.fromEntries(keys.map(assign));
