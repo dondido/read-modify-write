@@ -1,6 +1,6 @@
 {
   "name": "read-modify-write",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Node module for reading, modifying and writing files recursively",
   "main": "index.js",
   "directories": {

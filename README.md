@@ -96,7 +96,7 @@ const cleanCss = require('clean-css');
 const uglify = c => terser.minify(c).code;
 const clean = c => new cleanCss().minify(c).styles;
 const move = filePath => filePath.replace('src', 'dist');
-const filterJs = c => c.endsWith('.html');
+const filterJs = c => c.endsWith('.js');
 const filterCss = c => c.endsWith('.css');
 rmw('src', move);s
 rmw('src/dummy', move, filterJs, uglify);
